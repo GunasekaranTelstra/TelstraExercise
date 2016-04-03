@@ -17,11 +17,7 @@ public class InternetConnections {
 					if (info[i].getState() == NetworkInfo.State.CONNECTED) {
 
 						return true;
-					} else {
-//						Toast.makeText(context,
-//								"Please check your Internet connection...",
-//								Toast.LENGTH_SHORT).show();
-					}
+					} 
 		}
 		return false;
 	}

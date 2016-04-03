@@ -25,15 +25,10 @@ public class NetworkProcess {
 	public ArrayList<String> HTTP_Request(){
 		ArrayList<String> array = new ArrayList<String>();
 		String url = "https://dl.dropboxusercontent.com/u/746330/facts.json";
-		System.out.println(" Reached inside methode 11111111111");
 		HttpParams httpparam = new BasicHttpParams();
-//		HttpConnectionParams.setConnectionTimeout(httpparam, 100);
-		System.out.println(" Reached inside time 1.555");
-//		HttpConnectionParams.setSoTimeout(httpparam, 100);
 		HttpClient client = new DefaultHttpClient(httpparam);
 		StringBuilder sbuild = new StringBuilder();
 		HttpGet httpget = new HttpGet(url);
-		System.out.println(" Reached inside url 22222222");
 		try{
 		HttpResponse response = client.execute(httpget);
 		StatusLine statusline = response.getStatusLine();
@@ -47,8 +42,6 @@ public class NetworkProcess {
 				sbuild.append(lines);
 			}
 		}
-		System.out.println("responce is "+sbuild);
-		
 		array = JSON_Parse(sbuild+"");
 		}catch(ClientProtocolException cpe){
 			cpe.printStackTrace();
@@ -66,23 +59,19 @@ public class NetworkProcess {
 			String tString = jsonObject.getString("title");
 			as.add(tString);
 			String Response1 = jsonObject.getString("rows");
-			System.out.println("Tittle is *** "+tString);
 			JSONArray jsonArray = new JSONArray(Response1);
 			for(int i=0; i< jsonArray.length(); i++){
 				JSONObject jobject = jsonArray.getJSONObject(i);
 				if(jobject.getString("title")!="null"){
-					as.add(jobject.getString("title"));
-					System.out.println("ttt ***"+ jobject.getString("title"));}
+					as.add(jobject.getString("title"));}
 				else
 					as.add("");
 				if(jobject.getString("description")!="null"){
-					as.add(jobject.getString("description"));
-					System.out.println("dddd ***"+ jobject.getString("description"));}
+					as.add(jobject.getString("description"));}
 				else
 					as.add("");
 				if(jobject.getString("imageHref")!="null"){
-					as.add(jobject.getString("imageHref"));
-					System.out.println("dddd ***"+ jobject.getString("imageHref"));}
+					as.add(jobject.getString("imageHref"));}
 				else
 					as.add("");
 			}

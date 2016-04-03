@@ -27,7 +27,6 @@ public class TelstraActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE); 
 		setContentView(R.layout.activity_telstra);
-		System.out.println(" stage 11111111");
 
 		lst = (ListView) findViewById(R.id.list_views);
 		page_tittle = (TextView) findViewById(R.id.page_tittle);
@@ -49,9 +48,7 @@ public class TelstraActivity extends Activity {
 		// TODO Auto-generated method stub
 		super.onPause();
 
-		System.out.println(" stage 22222222222222");
-
-	}
+}
 
 	public class AsyncTaskRunner extends AsyncTask<String, Void, String> {
 		ProgressDialog pd;
