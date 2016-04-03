@@ -34,9 +34,9 @@ public class TelstraArrayAdapter extends ArrayAdapter {
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 		// TODO Auto-generated method stub
-
+		View view = convertView;
 		ViewHolder viewHolder;
-		if (convertView == null) {
+		if (view == null) {
 			viewHolder = new ViewHolder();
 			LayoutInflater inflater = LayoutInflater.from(getContext());
 			convertView = inflater.inflate(R.layout.telstra_layout, parent,
@@ -48,18 +48,20 @@ public class TelstraArrayAdapter extends ArrayAdapter {
 			viewHolder.img = (ImageView) convertView
 					.findViewById(R.id.image_view);
 			convertView.setTag(viewHolder);
+			
 			viewHolder.tittle.setText(data.get(position * 3 + 1));
 			viewHolder.discription.setText(data.get(position * 3 + 2));
-			imageLoader.DisplayImage("https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/American_Beaver.jpg/220px-American_Beaver.jpg",
-					viewHolder.img);
+			imageLoader
+					.DisplayImage(
+							"https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/American_Beaver.jpg/220px-American_Beaver.jpg",
+							viewHolder.img);
 			System.out.println("images is*****" + data.get(position * 3 + 3));
+
 		} else {
 			viewHolder = (ViewHolder) convertView.getTag();
 		}
-
-		// 04-03 00:39:08.414: I/System.out(1702): images
-		// is*****http://fyimusic.ca/wp-content/uploads/2008/06/hockey-night-in-canada.thumbnail.jpg
-
+		
+		
 		return convertView;
 	}
 
