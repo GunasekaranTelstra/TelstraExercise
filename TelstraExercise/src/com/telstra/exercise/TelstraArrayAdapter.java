@@ -48,13 +48,13 @@ public class TelstraArrayAdapter extends ArrayAdapter {
 			viewHolder.img = (ImageView) convertView
 					.findViewById(R.id.image_view);
 			convertView.setTag(viewHolder);
-			
+
 			viewHolder.tittle.setText(data.get(position * 3 + 1));
 			viewHolder.discription.setText(data.get(position * 3 + 2));
 			imageLoader
-					.DisplayImage(
-							"https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/American_Beaver.jpg/220px-American_Beaver.jpg",
-							viewHolder.img);
+					.DisplayImage(data.get(position * 3 + 3), viewHolder.img);
+
+			// "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/American_Beaver.jpg/220px-American_Beaver.jpg"
 
 		} else {
 			viewHolder = (ViewHolder) convertView.getTag();

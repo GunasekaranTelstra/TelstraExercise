@@ -18,6 +18,7 @@
             android:layout_alignParentTop="true"
             android:gravity="center_vertical"
             android:padding="5dp"
+            android:textStyle="bold"
             android:textSize="18sp"
             android:textColor="#00bfff" />
 
